@@ -2,9 +2,6 @@ import facebookIcon from "../assets/images/facebook.svg"
 import linkedinIcon from "../assets/images/linkedin.svg"
 import youtubeIcon from "../assets/images/youtube.svg"
 import githubIcon from "../assets/images/github.svg"
-import mobileIcon from "../assets/images/mobile.svg"
-import emailIcon from "../assets/images/email.svg"
-import locationIcon from "../assets/images/location.svg"
 
 export const ProfileCard: React.FC = () => {
     return (
@@ -28,7 +25,9 @@ export const ProfileCard: React.FC = () => {
             <div className="p-8">
                 <div className="flex items-center">
                     <div className='me-2 p-4'>
-                        <img src={mobileIcon} alt="mobile" width="100%" height="100%" />
+                        <span className="material-symbols-rounded">
+                            call
+                        </span>
                     </div>
                     <div>
                         <p className='font-raleway text-sm font-semibold text-1A1003 opacity-50'>Phone</p>

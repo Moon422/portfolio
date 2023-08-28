@@ -1,3 +1,4 @@
+import 'material-icons/iconfont/material-icons.css'
 import './App.css'
 import { ProfileCard } from './components/profile-card'
 
