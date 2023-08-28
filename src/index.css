@@ -8,6 +8,11 @@
 }
 
 @font-face {
+  font-family: Pacifico;
+  src: url("./assets/fonts/Pacifico-Regular.ttf");
+}
+
+@font-face {
   font-family: Poppins;
   src: url("./assets/fonts/Poppins-Regular.ttf");
 }
@@ -20,6 +25,26 @@
 
 body {
   @apply bg-F2F7FC;
+}
+
+.link {
+  @apply rounded-xl;
+}
+
+.active {
+  @apply text-white bg-gradient-to-r from-FF9C1B to-EC1B09;
+}
+
+.inactive {
+  @apply text-black bg-E1E8EF;
+}
+
+.inactive:hover {
+  @apply bg-B6B7B8;
+}
+
+.inactive .icon {
+  @apply text-gray-500;
 }
 
 /* :root {

@@ -14,10 +14,15 @@ export default {
         'EC1B09': '#EC1B09',
         '1A1003': '#1A1003',
         'FFEBD1': '#FFEBD1',
+        'FFE3BF': '#FFE3BF',
+        'FFEED9': '#FFEED9',
+        'E1E8EF': '#E1E8EF',
+        'B6B7B8': '#B6B7B8',
       },
       fontFamily: {
         'raleway': 'raleway',
         'poppins': 'poppins',
+        'pacifico': 'pacifico',
       }
     },
   },

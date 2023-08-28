@@ -8,17 +8,17 @@ export const ProfileCard: React.FC = () => {
         <>
             <h2 className='font-poppins text-center font-bold text-3xl text-0B0909 mb-4'>Mahfuzur Rahman</h2>
             <h5 className='font-raleway text-center font-medium text-0B0909 opacity-50 mb-3'>Fullstack Developer</h5>
-            <div className="flex justify-center mb-5">
-                <div className='bg-F2F7FC rounded-lg me-1 w-12 h-12 flex justify-center items-center'>
+            <div className="flex justify-center mb-5 gap-2">
+                <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
                     <img src={facebookIcon} alt="facebook icon" width="60%" height="60%" />
                 </div>
-                <div className='bg-F2F7FC rounded-lg mx-1 w-12 h-12 flex justify-center items-center'>
+                <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
                     <img src={linkedinIcon} alt="facebook icon" width="60%" height="60%" />
                 </div>
-                <div className='bg-F2F7FC rounded-lg mx-1 w-12 h-12 flex justify-center items-center'>
+                <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
                     <img src={youtubeIcon} alt="facebook icon" width="60%" height="60%" />
                 </div>
-                <div className='bg-F2F7FC rounded-lg ms-1 w-12 h-12 flex justify-center items-center'>
+                <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
                     <img src={githubIcon} alt="facebook icon" width="60%" height="60%" />
                 </div>
             </div>
@@ -61,7 +61,7 @@ export const ProfileCard: React.FC = () => {
                 <hr className='w-1/2 mx-auto mb-4' />
                 <div className="flex justify-center">
                     <a href="" className='px-20 py-2 rounded-full flex justify-center items-center bg-gradient-to-r from-FF9C1B to-EC1B09 text-white'><span className="material-symbols-rounded me-2">
-                        location_on
+                        download
                     </span>Resume</a>
                 </div>
             </div>
