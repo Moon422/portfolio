@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 export const Resume: React.FC = () => {
     useEffect(() => {
-        document.title = `Resume | ${document.title}`
+        document.title = `Resume | Mahfuzur Rahman`
     }, [])
 
     return (

@@ -5,7 +5,7 @@ export const Contact: React.FC = () => {
     const toastContext = useContext(toastStateContext)
 
     useEffect(() => {
-        document.title = `Contact Me | ${document.title}`
+        document.title = `Contact Me | Mahfuzur Rahman`
     }, [])
 
     return (

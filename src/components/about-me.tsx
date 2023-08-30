@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 export const AboutMe: React.FC = () => {
     useEffect(() => {
-        document.title = `About Me | ${document.title}`
+        document.title = `About Me | Mahfuzur Rahman`
     }, [])
 
     return (

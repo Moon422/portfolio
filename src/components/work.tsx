@@ -38,7 +38,7 @@ export const Work: React.FC = () => {
     const [activeTag, setActiveTag] = useState<string>("all")
 
     useEffect(() => {
-        document.title = `Works | ${document.title}`
+        document.title = `Works | Mahfuzur Rahman`
     }, [])
 
     return (
