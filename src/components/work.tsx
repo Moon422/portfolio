@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import portfolioPhoto from "../assets/images/portfolio.png"
 import classroomPhoto from "../assets/images/classroom.png"
 import databasePhoto from "../assets/images/database.png"
@@ -36,6 +36,10 @@ export const Work: React.FC = () => {
 
     const [activeIndex, setActiveIndex] = useState<number>(0)
     const [activeTag, setActiveTag] = useState<string>("all")
+
+    useEffect(() => {
+        document.title = `Works | ${document.title}`
+    }, [])
 
     return (
         <>

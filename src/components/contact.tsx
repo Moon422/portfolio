@@ -1,8 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { toastStateContext } from '../App'
 
 export const Contact: React.FC = () => {
     const toastContext = useContext(toastStateContext)
+
+    useEffect(() => {
+        document.title = `Contact Me | ${document.title}`
+    }, [])
+
     return (
         <>
             <div className='flex items-center mb-4'>

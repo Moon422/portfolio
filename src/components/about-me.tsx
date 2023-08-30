@@ -1,4 +1,10 @@
+import { useEffect } from 'react'
+
 export const AboutMe: React.FC = () => {
+    useEffect(() => {
+        document.title = `About Me | ${document.title}`
+    }, [])
+
     return (
         <>
             <div className='flex items-center mb-4'>
