@@ -16,11 +16,11 @@ export const ProfileCard: React.FC = () => {
                         <img src={facebookIcon} alt="facebook icon" width="60%" height="60%" />
                     </div>
                 </a>
-                <a href="https://www.linkedin.com/in/moon422">
-                    <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
-                        <img src={linkedinIcon} alt="linkedin icon" width="60%" height="60%" />
-                    </div>
-                </a>
+
+                <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
+                    <img src={linkedinIcon} alt="linkedin icon" width="60%" height="60%" />
+                </div>
+
                 <a href="https://www.youtube.com/channel/UClZaC3bNQWgEskcXyFL_pFg">
                     <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
                         <img src={youtubeIcon} alt="youtube icon" width="60%" height="60%" />
