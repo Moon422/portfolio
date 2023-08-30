@@ -28,7 +28,7 @@ body {
 }
 
 .link {
-  @apply rounded-xl;
+  @apply rounded-3xl;
 }
 
 .active {

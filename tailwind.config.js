@@ -18,6 +18,8 @@ export default {
         'FFEED9': '#FFEED9',
         'E1E8EF': '#E1E8EF',
         'B6B7B8': '#B6B7B8',
+        '57657A': '#57657A',
+        'FFE3BF': '#FFE3BF',
       },
       fontFamily: {
         'raleway': 'raleway',

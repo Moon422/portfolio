@@ -2,40 +2,103 @@ import 'material-symbols'
 import './App.css'
 import { ProfileCard } from './components/profile-card'
 import { AboutMe } from './components/about-me'
-import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import { Resume } from './components/resume'
 import { Work } from './components/work'
 import { Contact } from './components/contact'
-import { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, useEffect, useRef, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import bedtimePhoto from "./assets/images/icons8-bedtime-64.png"
+import eveningPhoto from './assets/images/icons8-night-100.png'
+import dayPhoto from './assets/images/icons8-sun-144.png'
+import clock1 from './assets/images/1.png'
+import clock2 from './assets/images/2.png'
+import clock3 from './assets/images/3.png'
+import clock4 from './assets/images/4.png'
+import clock5 from './assets/images/5.png'
+import clock6 from './assets/images/6.png'
+import clock7 from './assets/images/7.png'
+import clock8 from './assets/images/8.png'
+import clock9 from './assets/images/9.png'
+import clock10 from './assets/images/10.png'
+import clock11 from './assets/images/11.png'
+import clock12 from './assets/images/12.png'
+import { tz } from 'moment-timezone'
 
-enum ToastState {
-  SHOW, HIDDEN
-}
+export const toastStateContext = createContext<{ createToast: (text: string, duration: number) => void } | null>(null)
 
-export const toastStateContext = createContext<{ createToast: (text: string) => void } | null>(null)
+const Clock = () => {
+  const [time, setTime] = useState<string>("")
+  const [date, setDate] = useState<string>("")
+  const [timeIcon, setTimeIcon] = useState<string>("")
+  const [clockFaceIndex, setClockFaceIndex] = useState<number>(0)
+  const clockFaces = useRef<string[]>([
+    clock12, clock1, clock2, clock3, clock4, clock5, clock6, clock7, clock8, clock9, clock10, clock11
+  ])
 
-function App() {
-  const [toastText, setToastText] = useState<string>("")
-  const [toastState, setToastState] = useState<ToastState>(ToastState.HIDDEN)
-  const toastQueue = useRef<Array<{ text: string, duration: number }>>([])
-  const toastProcess = useRef<{ running: boolean }>({ running: false })
+  const updateTime = () => {
+    const timeDate = tz('Asia/Dhaka')
+    setTime(() => timeDate.format("LT"))
+    setDate(() => timeDate.format("ll"))
+    if (timeDate.hour() >= 23 || timeDate.hour() < 7) {
+      setTimeIcon(() => bedtimePhoto)
+    } else if (timeDate.hour() >= 7 && timeDate.hour() < 18) {
+      setTimeIcon(() => dayPhoto)
+    } else {
+      setTimeIcon(() => eveningPhoto)
+    }
+    setClockFaceIndex(() => {
+      const seconds = timeDate.second()
+      const index = seconds / 5
+      console.log(`Seconds: ${seconds}`)
+      console.log(`clockFaceIndex: ${index}`)
+      return index
+    })
+  }
 
+  useEffect(() => {
+    updateTime()
 
+    const clockTimer = setInterval(() => {
+      updateTime()
+    }, 5000)
+
+    return () => {
+      clearInterval(clockTimer)
+    }
+  }, [])
 
   return (
-    <div className='px-20 pb-10 relative'>
-      <button onClick={e => {
-        e.preventDefault()
-        createToast("test", 2000)
-      }}>Test</button>
-      <div className={`absolute bg-green-500 p-4 bg-opacity-50 rounded-md top-5 ${toastState == ToastState.SHOW ? 'right-5' : '-right-full'} transition-all`}>
-        <p>{toastText}</p>
+    <>
+      <div className='ms-auto w-12 h-12 me-2'>
+        <img src={timeIcon} alt="" className='w-full h-full' />
       </div>
-      <header>
+      <div className='font-poppins me-2 text-right'>
+        <p className='text-xl font-medium'>
+          {time}
+        </p>
+        <p>
+          {date}
+        </p>
+      </div>
+      <div className='w-12 h-12 me-2'>
+        <img src={clockFaces.current[clockFaceIndex]} alt="" className='w-full h-full' />
+      </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <div className='px-20 pb-10 relative'>
+      <ToastContainer />
+      <header className='flex items-center'>
         <p className='font-pacifico text-2xl py-8'>Mahfuzur Rahman</p>
+        <Clock />
       </header>
       <div className="flex justify-end">
-        <div className="flex bg-transparent shadow shadow-slate-300 mb-3 px-8 py-3 rounded-2xl gap-x-4">
+        <div className="flex bg-transparent shadow shadow-slate-300 mb-3 px-8 py-3 rounded-3xl gap-x-4">
           <NavLink to="/" className={({ isActive, isPending }) => {
             return isPending ? "link pending" : isActive ? "link active" : "link inactive"
           }}>
@@ -66,19 +129,32 @@ function App() {
           </NavLink>
         </div>
       </div>
-      <div className="flex">
-        <div className='bg-white px-6 pb-16 pt-28 rounded-2xl w-1/4 me-5'>
-          <ProfileCard />
-        </div>
-        <div className="w-3/4 bg-white rounded-2xl ps-20 pe-14 pt-5 pb-8">
-          <Routes>
-            <Route path='/' element={<AboutMe />} />
-            <Route path='/resume' element={<Resume />} />
-            <Route path='/work' element={<Work />} />
-            <Route path='/contact' element={<Contact />} />
-          </Routes>
-        </div>
-      </div >
+      <toastStateContext.Provider value={{
+        createToast: (text: string, duration: number) => toast.success<string>(text, {
+          position: "top-right",
+          autoClose: duration,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      }}>
+        <div className="flex">
+          <div className='bg-white px-6 pb-16 pt-28 rounded-3xl w-1/4 me-5 relative items-center flex flex-col'>
+            <ProfileCard />
+          </div>
+          <div className="w-3/4 bg-white rounded-3xl ps-20 pe-14 pt-5 pb-8">
+            <Routes>
+              <Route path='/' element={<AboutMe />} />
+              <Route path='/resume' element={<Resume />} />
+              <Route path='/work' element={<Work />} />
+              <Route path='/contact' element={<Contact />} />
+            </Routes>
+          </div>
+        </div >
+      </toastStateContext.Provider>
     </div>
   )
 }

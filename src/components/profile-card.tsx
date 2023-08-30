@@ -2,10 +2,12 @@ import facebookIcon from "../assets/images/facebook.svg"
 import linkedinIcon from "../assets/images/linkedin.svg"
 import youtubeIcon from "../assets/images/youtube.svg"
 import githubIcon from "../assets/images/github.svg"
+import profilePhoto from "../assets/images/profile-photo.jpg"
 
 export const ProfileCard: React.FC = () => {
     return (
         <>
+            <img src={profilePhoto} alt="profile picture" className='rounded-3xl absolute -top-24 shadow shadow-slate-300' />
             <h2 className='font-poppins text-center font-bold text-3xl text-0B0909 mb-4'>Mahfuzur Rahman</h2>
             <h5 className='font-raleway text-center font-medium text-0B0909 opacity-50 mb-3'>Fullstack Developer</h5>
             <div className="flex justify-center mb-5 gap-2">
@@ -22,7 +24,7 @@ export const ProfileCard: React.FC = () => {
                     <img src={githubIcon} alt="facebook icon" width="60%" height="60%" />
                 </div>
             </div>
-            <div className="p-8 rounded-2xl bg-F2F5F9">
+            <div className="p-8 rounded-3xl bg-F2F5F9">
                 <div className="flex items-center mb-4">
                     <div className='me-2 w-12 h-12 flex justify-center items-center bg-gradient-to-br from-EC1B09 to-FF9C1B text-transparent bg-clip-text'>
                         <span className="material-symbols-rounded">
@@ -60,7 +62,7 @@ export const ProfileCard: React.FC = () => {
                 </div>
                 <hr className='w-1/2 mx-auto mb-4' />
                 <div className="flex justify-center">
-                    <a href="" className='px-20 py-2 rounded-full flex justify-center items-center bg-gradient-to-r from-FF9C1B to-EC1B09 text-white'><span className="material-symbols-rounded me-2">
+                    <a href="" className='px-20 py-2 rounded-3xl flex justify-center items-center bg-gradient-to-r from-FF9C1B to-EC1B09 text-white'><span className="material-symbols-rounded me-2">
                         download
                     </span>Resume</a>
                 </div>
