@@ -74,6 +74,8 @@ export const Contact: React.FC = () => {
                 <form onSubmit={async (e) => {
                     e.preventDefault()
 
+                    console.log("clicked")
+
                     const formData = new FormData(e.currentTarget)
 
                     const message: Message = {
