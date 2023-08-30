@@ -50,7 +50,7 @@ const Clock = () => {
     }
     setClockFaceIndex(() => {
       const seconds = timeDate.second()
-      const index = seconds / 5
+      const index = Math.floor(seconds / 5)
       console.log(`Seconds: ${seconds}`)
       console.log(`clockFaceIndex: ${index}`)
       return index
