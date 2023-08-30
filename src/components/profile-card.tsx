@@ -72,7 +72,7 @@ export const ProfileCard: React.FC = () => {
                 </div>
                 <hr className='w-1/2 mx-auto mb-4' />
                 <div className="flex justify-center">
-                    <a href="https://raw.githubusercontent.com/Moon422/portfolio/main/CV%20-%20Mahfuzur%20Rahman.pdf" className='px-20 py-2 rounded-3xl flex justify-center items-center bg-gradient-to-r from-FF9C1B to-EC1B09 text-white'><span className="material-symbols-rounded me-2">
+                    <a href="https://raw.githubusercontent.com/Moon422/portfolio/main/CV%20-%20Mahfuzur%20Rahman.pdf" target='_blank' className='px-20 py-2 rounded-3xl flex justify-center items-center bg-gradient-to-r from-FF9C1B to-EC1B09 text-white'><span className="material-symbols-rounded me-2">
                         download
                     </span>Resume</a>
                 </div>
