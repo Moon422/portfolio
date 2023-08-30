@@ -26,7 +26,7 @@ import clock11 from './assets/images/11.png'
 import clock12 from './assets/images/12.png'
 import { tz } from 'moment-timezone'
 
-export const toastStateContext = createContext<{ createToast: (text: string, duration: number) => void } | null>(null)
+export const toastStateContext = createContext<{ createToast: (text: string, duration: number, success: boolean) => void } | null>(null)
 
 const Clock = () => {
   const [time, setTime] = useState<string>("")
@@ -51,8 +51,6 @@ const Clock = () => {
     setClockFaceIndex(() => {
       const seconds = timeDate.second()
       const index = Math.floor(seconds / 5)
-      console.log(`Seconds: ${seconds}`)
-      console.log(`clockFaceIndex: ${index}`)
       return index
     })
   }
@@ -130,7 +128,7 @@ function App() {
         </div>
       </div>
       <toastStateContext.Provider value={{
-        createToast: (text: string, duration: number) => toast.success<string>(text, {
+        createToast: (text: string, duration: number, success: boolean) => (success ? toast.success<string>(text, {
           position: "top-right",
           autoClose: duration,
           hideProgressBar: false,
@@ -139,7 +137,16 @@ function App() {
           draggable: true,
           progress: undefined,
           theme: "light",
-        })
+        }) : toast.error<string>(text, {
+          position: "top-right",
+          autoClose: duration,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }))
       }}>
         <div className="flex">
           <div className='bg-white px-6 pb-16 pt-28 rounded-3xl w-1/4 me-5 relative items-center flex flex-col'>

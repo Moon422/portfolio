@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { toastStateContext } from '../App'
+import { addMessage } from '../firebase/firebase'
+import { Message } from '../models'
 
 export const Contact: React.FC = () => {
     const toastContext = useContext(toastStateContext)
@@ -23,7 +25,7 @@ export const Contact: React.FC = () => {
                         <p className='font-poppins font-medium text-xl pt-3 pb-2' >Phone:</p>
                         <div className='flex items-center hover:cursor-pointer' onClick={e => {
                             navigator.clipboard.writeText(e.currentTarget.innerText)
-                            toastContext?.createToast("Phone number copied to clipboard", 3000)
+                            toastContext?.createToast("Phone number copied to clipboard", 3000, true)
                         }}>
                             <p>+8801748689039</p>
                             <div className='w-12 h-12 flex justify-center items-center bg-gradient-to-br from-EC1B09 to-FF9C1B text-transparent bg-clip-text'>
@@ -42,7 +44,7 @@ export const Contact: React.FC = () => {
                         <p className='font-poppins font-medium text-xl pt-3 pb-2' >Email:</p>
                         <div className='flex items-center hover:cursor-pointer' onClick={e => {
                             navigator.clipboard.writeText(e.currentTarget.innerText)
-                            toastContext?.createToast("Email address copied to clipboard", 3000)
+                            toastContext?.createToast("Email address copied to clipboard", 3000, true)
                         }}>
                             <p>mahfuzurrm98@gmail.com</p>
                             <div className='w-12 h-12 flex justify-center items-center bg-gradient-to-br from-EC1B09 to-FF9C1B text-transparent bg-clip-text'>
@@ -53,7 +55,7 @@ export const Contact: React.FC = () => {
                         </div>
                         <div className='flex items-center hover:cursor-pointer' onClick={e => {
                             navigator.clipboard.writeText(e.currentTarget.innerText)
-                            toastContext?.createToast("Email address copied to clipboard", 3000)
+                            toastContext?.createToast("Email address copied to clipboard", 3000, true)
                         }}>
                             <p>mahfuzur.rm789@gmail.com</p>
                             <div className='w-12 h-12 flex justify-center items-center bg-gradient-to-br from-EC1B09 to-FF9C1B text-transparent bg-clip-text'>
@@ -69,7 +71,26 @@ export const Contact: React.FC = () => {
                 <p className='font-raleway mb-4'>
                     I am always open to discussing <strong>new projects</strong>, <strong>opportunities in tech world</strong>, <strong>partnerships</strong> and more so <strong>mentorship</strong>.
                 </p>
-                <form>
+                <form onSubmit={async (e) => {
+                    e.preventDefault()
+
+                    const formData = new FormData(e.currentTarget)
+
+                    const message: Message = {
+                        name: formData.get("name")!.toString(),
+                        email: formData.get("email")!.toString(),
+                        message: formData.get("message")!.toString(),
+                        createdAt: new Date()
+                    }
+
+                    const obj = await addMessage(message)
+
+                    if (obj) {
+                        toastContext?.createToast("Message has been sent", 2000, true)
+                    } else {
+                        toastContext?.createToast("There was some error sending the message", 2000, false)
+                    }
+                }}>
                     <label htmlFor="name">Name:</label><br />
                     <input type="text" name="name" id="name" className='mb-3 w-full bg-transparent border-b-2 p-2 border-b-gray-500 focus:outline-none focus:border-b-blue-500' /><br />
                     <label htmlFor="email">Email:</label><br />
