@@ -49,7 +49,7 @@ export const Work: React.FC = () => {
             </div>
             <div className="flex justify-end gap-x-4 font-poppins text-base font-medium">
                 {
-                    links.current.map((item, index) => <div onClick={e => {
+                    links.current.map((item, index) => <div onClick={() => {
                         links.current[activeIndex].isActive = false
                         links.current[index].isActive = true
                         setActiveIndex(() => index)
