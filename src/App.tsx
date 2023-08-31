@@ -89,13 +89,13 @@ const Clock = () => {
 
 function App() {
   return (
-    <div className='px-20 pb-10 relative'>
+    <div className='py-10 px-10 lg:px-20 md:pt-0 md:pb-10'>
       <ToastContainer />
-      <header className='flex items-center'>
+      <header className='hidden h-20 md:flex items-center'>
         <p className='font-pacifico text-2xl py-8'>Mahfuzur Rahman</p>
         <Clock />
       </header>
-      <div className="flex justify-end">
+      <div className="hidden lg:flex justify-end">
         <div className="flex bg-transparent shadow shadow-slate-300 mb-3 px-8 py-3 rounded-3xl gap-x-4">
           <NavLink to="/" className={({ isActive, isPending }) => {
             return isPending ? "link pending" : isActive ? "link active" : "link inactive"
@@ -148,11 +148,41 @@ function App() {
           theme: "light",
         }))
       }}>
-        <div className="flex">
-          <div className='bg-white px-6 pb-16 pt-28 rounded-3xl w-1/4 me-5 relative items-center flex flex-col'>
+        <div className="flex flex-col lg:flex-row lg:items-start gap-5">
+          <div className='bg-white px-6 py-6 md:h-auto lg:pb-16 lg:pt-28 rounded-3xl w-full xl:w-1/3 2xl:w-1/4 relative items-center flex flex-col md:flex-row lg:flex-col md:items-stretch lg:items-center gap-5'>
             <ProfileCard />
           </div>
-          <div className="w-3/4 bg-white rounded-3xl ps-20 pe-14 pt-5 pb-8">
+          <div className="w-full xl:w-2/3 2xl:w-3/4 bg-white rounded-3xl ps-20 pe-14 pt-5 pb-8">
+            <div className="flex justify-center bg-transparent mb-3 px-8 py-3 rounded-3xl gap-x-4">
+              <NavLink to="/" className={({ isActive, isPending }) => {
+                return isPending ? "link pending" : isActive ? "link active" : "link inactive"
+              }}>
+                <div className="flex flex-col items-center justify-center w-20 h-20">
+                  <span className="material-symbols-rounded icon">home</span>Home
+                </div>
+              </NavLink>
+              <NavLink to="/resume" className={({ isActive, isPending }) => {
+                return isPending ? "link pending" : isActive ? "link active" : "link inactive"
+              }}>
+                <div className="flex flex-col items-center justify-center w-20 h-20">
+                  <span className="material-symbols-rounded icon">article</span>Resume
+                </div>
+              </NavLink>
+              <NavLink to="/work" className={({ isActive, isPending }) => {
+                return isPending ? "link pending" : isActive ? "link active" : "link inactive"
+              }}>
+                <div className="flex flex-col items-center justify-center w-20 h-20">
+                  <span className="material-symbols-rounded icon">work</span>Work
+                </div>
+              </NavLink>
+              <NavLink to="/contact" className={({ isActive, isPending }) => {
+                return isPending ? "link pending" : isActive ? "link active" : "link inactive"
+              }}>
+                <div className="flex flex-col items-center justify-center w-20 h-20">
+                  <span className="material-symbols-rounded icon">phone_in_talk</span>Contact
+                </div>
+              </NavLink>
+            </div>
             <Routes>
               <Route path='/' element={<AboutMe />} />
               <Route path='/resume' element={<Resume />} />
@@ -160,7 +190,7 @@ function App() {
               <Route path='/contact' element={<Contact />} />
             </Routes>
           </div>
-        </div >
+        </div>
       </toastStateContext.Provider>
     </div>
   )

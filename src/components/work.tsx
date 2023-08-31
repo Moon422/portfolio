@@ -47,7 +47,7 @@ export const Work: React.FC = () => {
                 <h1 className='uppercase text-4xl font-poppins font-medium text-0B0909 me-8'>Portfolio</h1>
                 <div className='w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
             </div>
-            <div className="flex justify-end gap-x-4 font-poppins text-base font-medium">
+            <div className="hidden xl:flex flex-wrap justify-end gap-x-4 mb-2 font-poppins text-base font-medium">
                 {
                     links.current.map((item, index) => <div onClick={() => {
                         links.current[activeIndex].isActive = false
@@ -57,7 +57,26 @@ export const Work: React.FC = () => {
                     }} key={index} className={`${item.isActive ? 'text-red-500' : 'text-57657A'} hover:cursor-pointer`}>{item.text}</div>)
                 }
             </div>
-            <div className="flex gap-x-8">
+            <div className='flex justify-end xl:hidden ms-auto mb-2'>
+                <select className='p-2 rounded-lg bg-F2F7FC'>
+                    {
+                        links.current.map((item, index) => (
+                            <option value={item.tag} key={index}
+                                onClick={() => {
+                                    links.current[activeIndex].isActive = false
+                                    links.current[index].isActive = true
+                                    setActiveIndex(() => index)
+                                    setActiveTag(() => links.current[index].tag)
+                                }}
+                                className={`${item.isActive ? 'text-red-500' : 'text-57657A'} hover:cursor-pointer`}
+                                selected={item.tag === activeTag}>
+                                {item.text}
+                            </option>
+                        ))
+                    }
+                </select>
+            </div>
+            <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-x-8">
                 {
                     (() => {
                         const filteredWorks = works.current.filter(item => {

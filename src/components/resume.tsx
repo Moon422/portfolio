@@ -11,7 +11,7 @@ export const Resume: React.FC = () => {
                 <h1 className='uppercase text-4xl font-poppins font-medium text-0B0909 me-8'>Resume</h1>
                 <div className='w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
             </div>
-            <div className="grid grid-cols-2 gap-x-16 gap-y-6 mb-9">
+            <div className="grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-16 gap-y-6 mb-9">
                 <h3 className='font-poppins text-lg font-semibold py-2'>Education</h3>
                 <h3 className='font-poppins text-lg font-semibold py-2'>Experience</h3>
                 <div className="rounded-xl py-4 px-2 bg-FFE3BF">

@@ -7,34 +7,36 @@ import profilePhoto from "../assets/images/profile-photo.jpg"
 export const ProfileCard: React.FC = () => {
     return (
         <>
-            <img src={profilePhoto} alt="profile picture" className='rounded-3xl absolute -top-24 shadow shadow-slate-300' />
-            <h2 className='font-poppins text-center font-bold text-3xl text-0B0909 mb-4'>Mahfuzur Rahman</h2>
-            <h5 className='font-raleway text-center font-medium text-0B0909 opacity-50 mb-3'>Fullstack Developer</h5>
-            <div className="flex justify-center mb-5 gap-2">
-                <a href="https://www.facebook.com/moon.knight117/" target='_blank'>
-                    <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
-                        <img src={facebookIcon} alt="facebook icon" width="60%" height="60%" />
-                    </div>
-                </a>
+            <div className='w-full flex flex-col items-center'>
+                <img src={profilePhoto} alt="profile picture" className='rounded-3xl lg:absolute lg:-top-24 shadow shadow-slate-300' />
+                <h2 className='font-poppins text-center font-bold text-3xl text-0B0909 mb-4 md:mt-4 lg:mt-0'>Mahfuzur Rahman</h2>
+                <h5 className='font-raleway text-center font-medium text-0B0909 opacity-50 mb-3'>Fullstack Developer</h5>
+                <div className="flex justify-center gap-2">
+                    <a href="https://www.facebook.com/moon.knight117/" target='_blank'>
+                        <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
+                            <img src={facebookIcon} alt="facebook icon" width="60%" height="60%" />
+                        </div>
+                    </a>
 
-                <a href="https://www.linkedin.com/in/moon422/" target='_blank'>
-                    <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
-                        <img src={linkedinIcon} alt="linkedin icon" width="60%" height="60%" />
-                    </div>
-                </a>
+                    <a href="https://www.linkedin.com/in/moon422/" target='_blank'>
+                        <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
+                            <img src={linkedinIcon} alt="linkedin icon" width="60%" height="60%" />
+                        </div>
+                    </a>
 
-                <a href="https://www.youtube.com/channel/UClZaC3bNQWgEskcXyFL_pFg" target='_blank'>
-                    <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
-                        <img src={youtubeIcon} alt="youtube icon" width="60%" height="60%" />
-                    </div>
-                </a>
-                <a href="https://github.com/Moon422" target='_blank'>
-                    <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
-                        <img src={githubIcon} alt="github icon" width="60%" height="60%" />
-                    </div>
-                </a>
-            </div >
-            <div className="p-8 rounded-3xl bg-F2F5F9">
+                    <a href="https://www.youtube.com/channel/UClZaC3bNQWgEskcXyFL_pFg" target='_blank'>
+                        <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
+                            <img src={youtubeIcon} alt="youtube icon" width="60%" height="60%" />
+                        </div>
+                    </a>
+                    <a href="https://github.com/Moon422" target='_blank'>
+                        <div className='bg-F2F7FC rounded-lg w-12 h-12 flex justify-center items-center'>
+                            <img src={githubIcon} alt="github icon" width="60%" height="60%" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div className="p-8 w-full rounded-3xl bg-F2F5F9">
                 <div className="flex items-center mb-4">
                     <div className='me-2 w-12 h-12 flex justify-center items-center bg-gradient-to-br from-EC1B09 to-FF9C1B text-transparent bg-clip-text'>
                         <span className="material-symbols-rounded">
