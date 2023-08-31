@@ -153,7 +153,7 @@ function App() {
             <ProfileCard />
           </div>
           <div className="w-full xl:w-2/3 2xl:w-3/4 bg-white rounded-3xl ps-20 pe-14 pt-5 pb-8">
-            <div className="flex justify-center bg-transparent mb-3 px-8 py-3 rounded-3xl gap-x-4">
+            <div className="flex justify-center bg-transparent mb-3 px-8 py-3 rounded-3xl gap-x-4 lg:hidden">
               <NavLink to="/" className={({ isActive, isPending }) => {
                 return isPending ? "link pending" : isActive ? "link active" : "link inactive"
               }}>
