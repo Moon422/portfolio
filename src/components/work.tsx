@@ -45,7 +45,7 @@ export const Work: React.FC = () => {
         <>
             <div className='flex items-center mb-4'>
                 <h1 className='uppercase text-4xl font-poppins font-medium text-0B0909 me-8'>Portfolio</h1>
-                <div className='w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
+                <div className='hidden md:block w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
             </div>
             <div className="hidden xl:flex flex-wrap justify-end gap-x-4 mb-2 font-poppins text-base font-medium">
                 {
@@ -76,7 +76,7 @@ export const Work: React.FC = () => {
                     }
                 </select>
             </div>
-            <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-x-8">
+            <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-8">
                 {
                     (() => {
                         const filteredWorks = works.current.filter(item => {
@@ -90,7 +90,7 @@ export const Work: React.FC = () => {
                                 {
                                     filteredWorks.slice(0, splitIndex).map(
                                         (item, index) => (
-                                            <div className={`p-2 mb-8 rounded-lg ${index % 2 ? 'bg-FFE3BF' : 'bg-FFEED9'}`}>
+                                            <div className={`p-2 mb-8 last:mb-0 rounded-lg ${index % 2 ? 'bg-FFE3BF' : 'bg-FFEED9'}`}>
                                                 <div key={index} className={`rounded-lg mb-2 flex justify-center items-center overflow-hidden ${index % 2 ? 'h-24' : 'h-40'}`}>
                                                     <img src={item.image} alt="cover photo" className='w-full h-auto object-cover' />
                                                 </div>
@@ -106,7 +106,7 @@ export const Work: React.FC = () => {
                                 {
                                     filteredWorks.slice(splitIndex).map(
                                         (item, index) => (
-                                            <div className={`p-2 mb-8 rounded-lg ${index % 2 ? 'bg-FFEED9' : 'bg-FFE3BF'}`}>
+                                            <div className={`p-2 mb-8 last:mb-0 rounded-lg ${index % 2 ? 'bg-FFEED9' : 'bg-FFE3BF'}`}>
                                                 <div key={index} className={`rounded-lg mb-2 flex justify-center items-center overflow-hidden ${index % 2 ? 'h-40' : 'h-24'}`}>
                                                     <img src={item.image} alt="cover photo" className='w-full h-auto object-cover' />
                                                 </div>

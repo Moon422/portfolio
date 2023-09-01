@@ -89,7 +89,7 @@ const Clock = () => {
 
 function App() {
   return (
-    <div className='py-10 px-10 lg:px-20 md:pt-0 md:pb-10'>
+    <div className='p-4 lg:px-20 md:pt-0 lg:pb-10'>
       <ToastContainer />
       <header className='hidden h-20 md:flex items-center'>
         <p className='font-pacifico text-2xl py-8'>Mahfuzur Rahman</p>
@@ -149,37 +149,41 @@ function App() {
         }))
       }}>
         <div className="flex flex-col lg:flex-row lg:items-start gap-5">
-          <div className='bg-white px-6 py-6 md:h-auto lg:pb-16 lg:pt-28 rounded-3xl w-full xl:w-1/3 2xl:w-1/4 relative items-center flex flex-col md:flex-row lg:flex-col md:items-stretch lg:items-center gap-5'>
+          <div className='bg-white p-6 md:h-auto lg:pb-16 lg:pt-28 rounded-3xl w-full xl:w-1/3 2xl:w-1/4 relative items-center flex flex-col md:flex-row lg:flex-col md:items-start lg:items-center gap-5'>
             <ProfileCard />
           </div>
-          <div className="w-full xl:w-2/3 2xl:w-3/4 bg-white rounded-3xl ps-20 pe-14 pt-5 pb-8">
-            <div className="flex justify-center bg-transparent mb-3 px-8 py-3 rounded-3xl gap-x-4 lg:hidden">
+          <div className="w-full xl:w-2/3 2xl:w-3/4 bg-white rounded-3xl p-8">
+            <div className="flex justify-center bg-transparent mb-8 gap-x-4 lg:hidden">
               <NavLink to="/" className={({ isActive, isPending }) => {
                 return isPending ? "link pending" : isActive ? "link active" : "link inactive"
               }}>
-                <div className="flex flex-col items-center justify-center w-20 h-20">
-                  <span className="material-symbols-rounded icon">home</span>Home
+                <div className="flex flex-col items-center justify-center rounded-3xl h-12 w-12 md:w-20 md:h-20">
+                  <span className="material-symbols-rounded icon">home</span>
+                  <span className="hidden md:inline">Home</span>
                 </div>
               </NavLink>
               <NavLink to="/resume" className={({ isActive, isPending }) => {
                 return isPending ? "link pending" : isActive ? "link active" : "link inactive"
               }}>
-                <div className="flex flex-col items-center justify-center w-20 h-20">
-                  <span className="material-symbols-rounded icon">article</span>Resume
+                <div className="flex flex-col items-center justify-center rounded-3xl h-12 w-12 md:w-20 md:h-20">
+                  <span className="material-symbols-rounded icon">article</span>
+                  <span className="hidden md:inline">Resume</span>
                 </div>
               </NavLink>
               <NavLink to="/work" className={({ isActive, isPending }) => {
                 return isPending ? "link pending" : isActive ? "link active" : "link inactive"
               }}>
-                <div className="flex flex-col items-center justify-center w-20 h-20">
-                  <span className="material-symbols-rounded icon">work</span>Work
+                <div className="flex flex-col items-center justify-center rounded-3xl h-12 w-12 md:w-20 md:h-20">
+                  <span className="material-symbols-rounded icon">work</span>
+                  <span className="hidden md:inline">Work</span>
                 </div>
               </NavLink>
               <NavLink to="/contact" className={({ isActive, isPending }) => {
                 return isPending ? "link pending" : isActive ? "link active" : "link inactive"
               }}>
-                <div className="flex flex-col items-center justify-center w-20 h-20">
-                  <span className="material-symbols-rounded icon">phone_in_talk</span>Contact
+                <div className="flex flex-col items-center justify-center rounded-3xl h-12 w-12 md:w-20 md:h-20">
+                  <span className="material-symbols-rounded icon">phone_in_talk</span>
+                  <span className="hidden md:inline">Contact</span>
                 </div>
               </NavLink>
             </div>

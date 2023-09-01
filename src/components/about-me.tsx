@@ -9,13 +9,13 @@ export const AboutMe: React.FC = () => {
         <>
             <div className='flex items-center mb-4'>
                 <h1 className='uppercase text-4xl font-poppins font-medium text-0B0909 me-8'>About me</h1>
-                <div className='w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
+                <div className='hidden md:block w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
             </div>
             <p className='text-justify font-raleway font-medium mb-6'>
                 I am a soon-to-graduate computer science student with a strong backend development focus, complemented by frontend skills. My foundation in programming, algorithms, and data structures equips me to architect efficient systems, while adaptability and analytical acumen enable me to tackle complex challenges. I thrive in collaborative settings, emphasizing effective communication and attention to detail. My passion for continuous learning keeps me at the forefront of evolving technologies. As graduation approaches, I look forward to leveraging my coding enthusiasm for impactful projects, merging backend expertise with frontend capabilities, and infusing each endeavor with empathy, adaptability, and a commitment to collective success.
             </p>
             <h2 className='text-3xl font-poppins font-medium text-0B0909 mb-7'>What I do!</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-x-7 gap-y-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-8">
                 <div className='bg-FFEBD1 py-3 px-6 rounded-3xl'>
                     <h3 className='font-poppins text-lg font-semibold py-2'>Frontend Development</h3>
                     <p className='font-raleway text-sm pb-2'>

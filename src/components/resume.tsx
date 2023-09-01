@@ -9,30 +9,34 @@ export const Resume: React.FC = () => {
         <>
             <div className='flex items-center mb-4'>
                 <h1 className='uppercase text-4xl font-poppins font-medium text-0B0909 me-8'>Resume</h1>
-                <div className='w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
+                <div className='hidden md:block w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-16 gap-y-6 mb-9">
-                <h3 className='font-poppins text-lg font-semibold py-2'>Education</h3>
-                <h3 className='font-poppins text-lg font-semibold py-2'>Experience</h3>
-                <div className="rounded-xl py-4 px-2 bg-FFE3BF">
-                    <p className='font-raleway text-sm pb-2'>2018 - Ongoing</p>
-                    <p className="font-raleway font-semibold text-sm pb-2">BSc. in Computer Science</p>
-                    <p className="font-raleway font-medium text-sm">Independent University, Bangladesh (IUB)</p>
+            <div className="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-8 mb-8">
+                <div className='flex flex-col gap-8 flex-1'>
+                    <h3 className='font-poppins text-lg font-semibold'>Education</h3>
+                    <div className="rounded-xl py-4 px-2 bg-FFE3BF">
+                        <p className='font-raleway text-sm pb-2'>2018 - Ongoing</p>
+                        <p className="font-raleway font-semibold text-sm pb-2">BSc. in Computer Science</p>
+                        <p className="font-raleway font-medium text-sm">Independent University, Bangladesh (IUB)</p>
+                    </div>
+                    <div className="rounded-xl py-4 px-2 bg-FFEED9">
+                        <p className='font-raleway text-sm pb-2'>2015 - 2018</p>
+                        <p className="font-raleway font-semibold text-sm pb-2">IGCSE O-Level & GCE A-Level (Private Candidate)</p>
+                        <p className="font-raleway font-medium text-sm">British Council, Bangladesh</p>
+                    </div>
                 </div>
-                <div className="rounded-xl py-4 px-2 bg-FFEED9">
-                    <p className='font-raleway text-sm pb-2'>May 2023 - July 2023 (3 Months)</p>
-                    <p className="font-raleway font-semibold text-sm pb-2">Software Engineer Trainee (AI)</p>
-                    <p className="font-raleway font-medium text-sm">ADN Diginet</p>
-                </div>
-                <div className="rounded-xl py-4 px-2 bg-FFEED9">
-                    <p className='font-raleway text-sm pb-2'>2015 - 2018</p>
-                    <p className="font-raleway font-semibold text-sm pb-2">IGCSE O-Level & GCE A-Level (Private Candidate)</p>
-                    <p className="font-raleway font-medium text-sm">British Council, Bangladesh</p>
-                </div>
-                <div className="rounded-xl py-4 px-2 bg-FFE3BF">
-                    <p className='font-raleway text-sm pb-2'>Jan 2020 - March 2020 & June 2022 - August 2022 (6 Months)</p>
-                    <p className="font-raleway font-semibold text-sm pb-2">Teaching Assistant (C++ & Python)</p>
-                    <p className="font-raleway font-medium text-sm">Independent University, Bangladesh (IUB)</p>
+                <div className='flex flex-col gap-8 flex-1'>
+                    <h3 className='font-poppins text-lg font-semibold'>Experience</h3>
+                    <div className="rounded-xl py-4 px-2 bg-FFEED9">
+                        <p className='font-raleway text-sm pb-2'>May 2023 - July 2023 (3 Months)</p>
+                        <p className="font-raleway font-semibold text-sm pb-2">Software Engineer Trainee (AI)</p>
+                        <p className="font-raleway font-medium text-sm">ADN Diginet</p>
+                    </div>
+                    <div className="rounded-xl py-4 px-2 bg-FFE3BF">
+                        <p className='font-raleway text-sm pb-2'>Jan 2020 - March 2020 & June 2022 - August 2022 (6 Months)</p>
+                        <p className="font-raleway font-semibold text-sm pb-2">Teaching Assistant (C++ & Python)</p>
+                        <p className="font-raleway font-medium text-sm">Independent University, Bangladesh (IUB)</p>
+                    </div>
                 </div>
             </div>
             <div className="flex gap-x-16">

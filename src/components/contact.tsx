@@ -14,7 +14,7 @@ export const Contact: React.FC = () => {
         <>
             <div className='flex items-center mb-4'>
                 <h1 className='uppercase text-4xl font-poppins font-medium text-0B0909 me-8'>Contact</h1>
-                <div className='w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
+                <div className='hidden md:block w-1/3 rounded-full h-1 bg-gradient-to-r from-FF9C1B to-EC1B09'></div>
             </div>
             <div className="grid xl:grid-cols-2 gap-8 mb-8">
                 <div className="w-full h-56 p-6 rounded-3xl bg-FFEED9">
@@ -36,7 +36,7 @@ export const Contact: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-56 p-6 rounded-3xl bg-F2F7FC gap-x-2">
+                <div className="w-full h-56 p-6 rounded-3xl bg-F2F7FC">
                     <p className='font-poppins font-medium text-xl pt-3 pb-2 flex items-center'>
                         <span className='me-4 flex justify-center items-center bg-gradient-to-br from-EC1B09 to-FF9C1B text-transparent bg-clip-text'>
                             <span className="material-symbols-rounded text-3xl">mail</span>
